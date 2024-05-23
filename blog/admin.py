@@ -4,10 +4,7 @@ from .models import Post
 # Register your models here.
 
 
-
-
-
-class PostAdmin(admin.ModelAdmin): # Added a model admin customization
+class PostAdmin(admin.ModelAdmin):  # Added a model admin customization
     list_display = ["title", "slug", "author", "publish", "status"]
     list_filter = ["status", "created", "publish", "author"]
     search_fields = ["title", "body"]
@@ -16,6 +13,7 @@ class PostAdmin(admin.ModelAdmin): # Added a model admin customization
     date_hierarchy = "publish"
     ordering = ["status", "publish"]
 
+    # Registering model and its admin customization
 
-    #Registering model and its admin customization
+
 admin.site.register(Post, PostAdmin)
