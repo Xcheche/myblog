@@ -8,6 +8,8 @@ urlpatterns = [
         "", views.post_list, name="post_list"
     ),  # Correctly mapped the post_list view to the root URL
     path(
-        "<int:id>/", views.post_detail, name="post_detail"
+        "<int:year>/<int:month>/<int:day>/<slug:post>/",
+        views.post_detail,
+        name="post_detail",
     ),  # Correctly mapped the post_detail view to the detail URL
 ]
